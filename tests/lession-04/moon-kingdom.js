@@ -1,23 +1,21 @@
-let characters = [{name: "tuan", level: 1, health: 1001}]
-let possibleWinners =[];
+let characters = [
+    {name: "tuan", level: 1, health: 30000}, 
+    {name: "anhnth", level: 9, health: 356}, 
+    {name: "ngoc", level: 6, health: 1001}
+]
 let charactersPowerUp = characters.map(function(characters){
     return {
-        name :characters.name,
+        name :characters.name.toUpperCase(),
         level: characters.level*2,
         health: characters.health*3
     }
 });
-function createCharacters(mangN){
-for(let i=0; i<mangN.length; i++){
-    if(mangN[i].health>1000){
-        possibleWinners.push(mangN[i]);
-    }
+const possibleWinners = characters.filter(characters => characters.health >1000)
+function createCharacters(){
+    console.log(charactersPowerUp); 
+    console.log(possibleWinners)
 }
-}
-// console.log(charactersPowerUp.name)
 createCharacters(characters);
-console.log(possibleWinners)
-// createCharacters(charactersPowerUp);
 
 
 
